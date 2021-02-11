@@ -1,0 +1,23 @@
+{
+  "name": "app",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.12.13",
+    "@babel/preset-react": "^7.12.13",
+    "babel-loader": "^8.2.2",
+    "css-loader": "^5.0.1",
+    "html-webpack-plugin": "^5.0.0",
+    "source-map-loader": "^2.0.0",
+    "url-loader": "^4.1.1",
+    "webpack": "^5.20.2",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "scripts": {
+    "start": "node start"
+  }
+}
