@@ -1,23 +1,29 @@
-from django.db import models
+"""
+Rushing Stats Module
+"""
+from django.db.models import CharField, ForeignKey, Model, PROTECT
 
 
-class Player(models.Model):
-    first_name = models.CharField(
+class Player(Model):
+    """
+    Player Model
+    """
+    first_name = CharField(
         blank=False,
         max_length=100,
         null=False
     )
-    last_name = models.CharField(
+    last_name = CharField(
         blank=False,
         max_length=100,
         null=False
     )
-    team = models.ForeignKey(
+    team = ForeignKey(
         'Team',
-        on_delete=models.PROTECT,
+        on_delete=PROTECT,
         null=False
     )
-    position = models.CharField(
+    position = CharField(
         blank=False,
         max_length=3,
         null=False

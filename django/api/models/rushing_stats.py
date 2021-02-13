@@ -1,70 +1,77 @@
-from django.db import models
+"""
+Rushing Stats Module
+"""
+from django.db.models import \
+    BooleanField, DecimalField, ForeignKey, Model, PROTECT
 
 
-class RushingStats(models.Model):
-    player = models.ForeignKey(
+class RushingStats(Model):
+    """
+    Rushing Statistics Model
+    """
+    player = ForeignKey(
         'Player',
-        on_delete=models.PROTECT,
+        on_delete=PROTECT,
         null=False
     )
-    att_per_game = models.DecimalField(
+    att_per_game = DecimalField(
         max_digits=5,
         decimal_places=1,
         null=True
     )
-    att_total = models.DecimalField(
+    att_total = DecimalField(
         max_digits=7,
         decimal_places=0,
         null=True
     )
-    yds_total = models.DecimalField(
+    yds_total = DecimalField(
         max_digits=7,
         decimal_places=0,
         null=True
     )
-    yds_avg_per_att = models.DecimalField(
+    yds_avg_per_att = DecimalField(
         max_digits=5,
         decimal_places=1,
         null=True
     )
-    yds_per_game = models.DecimalField(
+    yds_per_game = DecimalField(
         max_digits=7,
         decimal_places=1,
         null=True
     )
-    td_total = models.DecimalField(
+    td_total = DecimalField(
         max_digits=5,
         decimal_places=0,
         null=True
     )
-    rush_max = models.DecimalField(
+    rush_max = DecimalField(
         max_digits=5,
         decimal_places=0,
         null=True
     )
-    rush_max_td = models.BooleanField(
+    rush_max_td = BooleanField(
     )
-    rush_1st = models.DecimalField(
+    rush_1st = DecimalField(
         max_digits=5,
         decimal_places=0,
         null=True
     )
-    rush_1st_pct = models.DecimalField(
+    rush_1st_pct = DecimalField(
         max_digits=5,
         decimal_places=1,
         null=True
     )
-    rush_20_yds = models.DecimalField(
+    rush_20_yds = DecimalField(
         max_digits=7,
         decimal_places=0,
         null=True
     )
-    rush_40_yds = models.DecimalField(
+    rush_40_yds = DecimalField(
         max_digits=7,
         decimal_places=0,
         null=True
     )
-    fumbles_total = models.DecimalField(
+    fumbles_total = DecimalField(
         max_digits=7,
         decimal_places=0,
         null=True
