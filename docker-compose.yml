@@ -27,7 +27,7 @@ services:
   web:
     build: ./react
     command: >
-      sh -c "npm install &&
+      sh -c "npm install --force &&
              npm start"
     volumes:
       - ./react:/web
