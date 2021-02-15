@@ -30,12 +30,12 @@ module.exports = {
       test: /\.css$/i,
       use: ['style-loader', 'css-loader'],
     }, {
+      test: /\.s[ac]ss$/i,
+      use: ['style-loader', 'css-loader', 'sass-loader'],
+    }, {
       test: /\.(otf|eot|svg|ttf|woff|woff2)$/i,
       use: [{
         loader: 'url-loader',
-        options: {
-          limit: 10000,
-        },
       }],
     }]
   },

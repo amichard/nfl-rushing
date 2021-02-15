@@ -6,14 +6,15 @@ const playerColumns = [{
   headerClassName: 'text-left',
   id: 'player-name',
   sortBy: ['player__last_name', 'player__first_name'],
-  width: 200,
+  width: 150,
 }, {
   accessor: 'player.position',
+  className: 'text-center',
   filterBy: 'player__position',
   Header: 'Pos',
   id: 'player-position',
   sortBy: 'player__position',
-  width: 100,
+  width: 50,
 }];
 
 export default playerColumns;

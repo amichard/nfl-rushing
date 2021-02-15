@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import './App.css';
+
 import 'react-table/react-table.css';
+import './app/styles/index.scss';
 
 import App from './App';
 
