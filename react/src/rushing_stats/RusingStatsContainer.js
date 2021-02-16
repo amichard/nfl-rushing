@@ -14,21 +14,21 @@ const RushingStatsContainer = () => {
 
     const filters = getFilterBy(state);
 
-    const data = {
+    const params = {
       ...filters,
       ordering: getOrderBy(state),
       page: state.page + 1,
       page_size: state.pageSize,
     };
 
-    axios.get('http://localhost:8000/api/rushing-stats', { params: data }).then((response) => {
+    axios.get('http://localhost:8000/api/rushing-stats', { params }).then((response) => {
       const { count, results } = response.data;
 
       setData(results);
       setPages(Math.ceil(count / state.pageSize));
       setLoading(false);
     });
-  }
+  };
 
   return (
     <div className="row">

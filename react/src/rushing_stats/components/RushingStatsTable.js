@@ -33,7 +33,7 @@ const RushingStatsTable = (props) => {
       pages={pages}
       sortable
     />
-  )
+  );
 };
 
 RushingStatsTable.propTypes = {

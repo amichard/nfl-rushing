@@ -4,7 +4,7 @@ const colWidth = 75;
 
 const numericCell = (value, precision = 0) => {
   if (value < 0) {
-    return <span className="text-danger">{value.toFixed(precision)}</span>
+    return <span className="text-danger">{value.toFixed(precision)}</span>;
   }
 
   return value.toFixed(precision);

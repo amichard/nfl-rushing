@@ -48,24 +48,26 @@ const getFilterBy = (state) => {
   });
 
   return data;
-}
+};
 
 const getOrderBy = (state) => {
   const orderBy = [];
 
   state.sorted.forEach((sortBy) => {
     let sortByFields = findSortBy(state.columns, sortBy.id);
-  
+
     if (!Array.isArray(sortByFields)) {
       sortByFields = [sortByFields];
     }
-  
+
     sortByFields.forEach((value) => {
       orderBy.push(`${sortBy.desc ? '-' : ''}${value}`);
     });
   });
 
   return orderBy.join(',');
-}
+};
 
-export { findFilterBy, findSortBy, getFilterBy, getOrderBy };
+export {
+  findFilterBy, findSortBy, getFilterBy, getOrderBy,
+};
