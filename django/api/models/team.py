@@ -1,12 +1,12 @@
 """
-Rushing Stats Module
+Team Model
 """
 from django.db.models import CharField, Model
 
 
 class Team(Model):
     """
-    Team Model
+    Contains list of NFL teams
     * Prepending t_ to make it more distinguishable
     """
     t_code = CharField(

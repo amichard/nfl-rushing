@@ -26,6 +26,7 @@ const RushingStatsTable = (props) => {
     <ReactTable
       columns={columns}
       data={data}
+      defaultSorted={[{ id: 'player-name', desc: false }]}
       filterable
       loading={loading}
       manual

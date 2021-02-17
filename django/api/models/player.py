@@ -1,12 +1,12 @@
 """
-Rushing Stats Module
+Fixture Migration Model
 """
 from django.db.models import CharField, ForeignKey, Model, PROTECT
 
 
 class Player(Model):
     """
-    Player Model
+    Contains basic information of the player
     """
     first_name = CharField(
         blank=False,

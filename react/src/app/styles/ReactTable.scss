@@ -25,6 +25,10 @@ Base styling for any React Table
   }
 
   .rt-thead {
+    &.-header .rt-th:hover {
+      opacity: 0.65;
+    }
+
     &.-headerGroups {
       border-bottom: none;
 

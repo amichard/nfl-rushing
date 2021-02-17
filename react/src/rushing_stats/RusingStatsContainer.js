@@ -1,3 +1,6 @@
+/* global
+  __APIBASE__
+*/
 import axios from 'axios';
 import React, { useState } from 'react';
 
@@ -21,7 +24,7 @@ const RushingStatsContainer = () => {
       page_size: state.pageSize,
     };
 
-    axios.get('http://localhost:8000/api/rushing-stats', { params }).then((response) => {
+    axios.get(`${__APIBASE__}/api/rushing-stats`, { params }).then((response) => {
       const { count, results } = response.data;
 
       setData(results);

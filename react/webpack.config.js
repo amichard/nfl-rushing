@@ -1,4 +1,5 @@
-const path = require("path");
+const Webpack = require('webpack');
+const path = require('path');
 
 module.exports = {
   devServer: {
@@ -37,7 +38,7 @@ module.exports = {
       use: [{
         loader: 'url-loader',
       }],
-    }]
+    }],
   },
   output: {
     crossOriginLoading: 'anonymous',
@@ -45,4 +46,9 @@ module.exports = {
     path: path.resolve(__dirname, 'public'),
     publicPath: '/',
   },
+  plugins: [
+    new Webpack.DefinePlugin({
+      __APIBASE__: 'APIBASE' in process.env ? JSON.stringify(process.env.APIBASE) : '',
+    }),
+  ],
 };

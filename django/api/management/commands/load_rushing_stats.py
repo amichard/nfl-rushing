@@ -1,5 +1,6 @@
 """
-Rushing Stats Module
+Command line function to import a JSON file into their respective
+Rushing Stats Models
 """
 import json
 from os import path
@@ -10,8 +11,8 @@ from api.services.rushing_stats import import_from_json
 
 class Command(BaseCommand):
     """
-    Command line function to import a JSON file into their respective
-    Rushing Stats Models
+    This command takes in a json file and will parse and create records
+    for players and their rushing stats
     """
     help = 'Loads JSON file into the players and rushing_stats table'
 

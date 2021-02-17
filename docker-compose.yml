@@ -2,7 +2,7 @@ version: "3.9"
 
 services:
   db:
-    image: postgres
+    image: postgres:13.2
     environment:
       - POSTGRES_DB=postgres
       - POSTGRES_USER=postgres
@@ -17,6 +17,15 @@ services:
     command: >
       sh -c "python manage.py migrate &&
              python manage.py runserver 0.0.0.0:8000"
+    environment:
+      - ALLOWED_HOSTS=localhost
+      - CORS_ORIGIN_WHITELIST=http://localhost:3000
+      - DB_ENGINE=django.db.backends.postgresql
+      - DB_HOST=db
+      - DB_NAME=postgres
+      - DB_PASSWORD=postgres
+      - DB_PORT=5432
+      - DB_USER=postgres
     volumes:
       - ./django:/api
     ports:
@@ -29,6 +38,8 @@ services:
     command: >
       sh -c "npm install --force &&
              npm start"
+    environment:
+      - APIBASE=http://localhost:8000
     volumes:
       - ./react:/web
     ports:

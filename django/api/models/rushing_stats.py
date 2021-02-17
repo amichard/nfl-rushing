@@ -1,5 +1,5 @@
 """
-Rushing Stats Module
+Rushing Statistics Model
 """
 from django.db.models import \
     BooleanField, DecimalField, ForeignKey, Model, PROTECT
@@ -7,7 +7,7 @@ from django.db.models import \
 
 class RushingStats(Model):
     """
-    Rushing Statistics Model
+    Contains the rushing statistics for a player
     """
     player = ForeignKey(
         'Player',
