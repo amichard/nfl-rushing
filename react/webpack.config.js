@@ -48,7 +48,7 @@ module.exports = {
   },
   plugins: [
     new Webpack.DefinePlugin({
-      __APIBASE__: 'APIBASE' in process.env ? JSON.stringify(process.env.APIBASE) : '',
+      __API_BASE__: 'API_BASE' in process.env ? JSON.stringify(process.env.API_BASE) : '',
     }),
   ],
 };

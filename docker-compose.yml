@@ -39,7 +39,7 @@ services:
       sh -c "npm install --force &&
              npm start"
     environment:
-      - APIBASE=http://localhost:8000
+      - API_BASE=http://localhost:8000
     volumes:
       - ./react:/web
     ports:

@@ -1,11 +1,9 @@
-/* global
-  __APIBASE__
-*/
 import axios from 'axios';
 import React, { useState } from 'react';
 
 import { getFilterBy, getOrderBy } from '../app/utilities/reactTable';
 import RushingStatsTable from './components/RushingStatsTable';
+import ROUTES from './routes';
 
 const RushingStatsContainer = () => {
   const [data, setData] = useState([]);
@@ -24,7 +22,7 @@ const RushingStatsContainer = () => {
       page_size: state.pageSize,
     };
 
-    axios.get(`${__APIBASE__}/api/rushing-stats`, { params }).then((response) => {
+    axios.get(ROUTES.LIST, { params }).then((response) => {
       const { count, results } = response.data;
 
       setData(results);
