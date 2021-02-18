@@ -19,7 +19,7 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         RushingStats.objects.all().delete()
-       
+
         self.stdout.write(self.style.SUCCESS(
             'Rushing stats Table has been cleared'
         ))

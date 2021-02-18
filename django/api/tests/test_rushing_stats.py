@@ -70,7 +70,7 @@ class TestRushingStats(BaseTestCase):
 
     def test_filter_by_player(self):
         """
-        Testing filter by player name. 
+        Testing filter by player name.
         Player's name are stored in separate first name and last name columns,
         Passing Shaun or partial matches like Ban should result with the
         related records.
@@ -93,7 +93,7 @@ class TestRushingStats(BaseTestCase):
 
     def test_filter_by_position(self):
         """
-        Testing filter by position. 
+        Testing filter by position.
         """
         web_client = Client()
         response = web_client.get(
