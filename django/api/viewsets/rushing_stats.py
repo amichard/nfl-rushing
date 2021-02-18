@@ -20,6 +20,7 @@ class RushingStatsViewset(GenericViewSet, ListModelMixin):
     http_method_names = ['get']
     filterset_class = RushingStatsFilter
     ordering_fields = '__all_related__'
+    ordering = ('player__last_name', 'player__first_name',)
 
     serializer_classes = {
         'default': RushingStatsSerializer

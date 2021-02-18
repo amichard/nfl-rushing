@@ -2,15 +2,19 @@
 Manually created to automate importing of the initial data
 """
 import os
+from score import settings
+
 from django.db import migrations
 
 
 def database_forward(_apps, _schema_editor):
-    os.system('./init.sh')
+    if not settings.TESTING:
+        os.system('./init.sh')
 
 
 def database_reverse(_apps, _schema_editor):
-    os.system('./clear.sh')
+    if not settings.TESTING:
+        os.system('./clear.sh')
 
 
 class Migration(migrations.Migration):

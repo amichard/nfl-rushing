@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 import os
+import sys
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -24,6 +25,9 @@ SECRET_KEY = '#8+m(ba_(ra1=lo+-7jyp#x49l27guk*i4)w@xp7j9b9umkwh^'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+
+# Variable that we can call to see if we're running manage.py test
+TESTING = 'test' in sys.argv
 
 ALLOWED_HOSTS = [os.getenv('ALLOWED_HOSTS')]
 

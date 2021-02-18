@@ -2,3 +2,5 @@ __pycache__/
 .DS_Store
 .pyc
 package-lock.json
+django/.coverage
+react/node_modules/
