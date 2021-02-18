@@ -4,8 +4,10 @@ At theScore, we are always looking for intelligent, resourceful, full-stack deve
 
 ### Installation and running this solution
 Requirements:
-Docker https://docs.docker.com/get-docker/
-Port 3000 and 8000 to be free
+* Docker https://docs.docker.com/get-docker/
+* Port 3000 and 8000 to be free
+
+
 
 To setup the application, execute the command in your terminal:
 ```
