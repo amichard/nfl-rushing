@@ -1,15 +1,90 @@
 # theScore "the Rush" Interview Challenge
 At theScore, we are always looking for intelligent, resourceful, full-stack developers to join our growing team. To help us evaluate new talent, we have created this take-home interview question. This question should take you no more than a few hours.
 
-**All candidates must complete this before the possibility of an in-person interview. During the in-person interview, your submitted project will be used as the base for further extensions.**
 
-### Why a take-home challenge?
-In-person coding interviews can be stressful and can hide some people's full potential. A take-home gives you a chance work in a less stressful environment and showcase your talent.
+### Installation and running this solution
+Requirements:
+Docker https://docs.docker.com/get-docker/
+Port 3000 and 8000 to be free
 
-We want you to be at your best and most comfortable.
+To setup the application, execute the command in your terminal:
+```
+docker-compose up
+```
 
-### A bit about our tech stack
-As outlined in our job description, you will come across technologies which include a server-side web framework (like Elixir/Phoenix, Ruby on Rails or a modern Javascript framework) and a front-end Javascript framework (like ReactJS)
+To run the application, go to your browser and navigate to:
+```
+http://localhost:3000/
+```
+
+
+If you get into the container, you can run various scripts to test, refresh the database or lint.
+To get into the container, run the following in a new terminal window:
+```
+docker-compose exec api bash
+```
+
+* This should let you in the container, you can then run the test command:
+```
+./test.sh
+```
+
+Or you can reload the data by executing:
+```
+./init.sh
+```
+
+Or check if the code conforms to pycodestyle:
+```
+./pycodestyle.sh
+```
+
+You can actually load a different json file by executing:
+```
+python manage.py load_rushing_stats <json_file>
+```
+where `<json_file>` is the file you want to import.
+
+
+### Background and Tech Stack
+Backend
+* Django (Python)
+* Postgres
+
+Frontend
+* React
+* Bootstrap 4
+* Webpack
+* Node
+
+I used django for the backend as it's the most familiar for me. 
+It's currently used as a rest API and will return json as a response.
+
+For the frontend, I used React with Bootstrap for the styling.
+Things are automatically bundled with `Webpack` and served with `Webpack dev server`.
+
+The application can sort with any of the columns by clicking on the secondary header and is 
+highlighted with a blue line. You can even sort with multiple columns by holding shift then
+click on additional columns.
+
+The application will filter as you type on the respective input field below the header.
+Name has a special filter applied where it looks whether first name or last name contains the search term 
+and Team searches for both the team code or team name.
+
+To handle large datasets, I used server-side paging as well. By default `react-table` expects all records to be
+loaded right away.
+
+I renamed `rushing.json` to `data.json` and placed it on `django/api/fixtures`.
+
+Django Rest Framework provides a way to see what the backend api is showing.
+You can take a look by navigating to:
+```
+http://localhost:8000/api/rushing-stats
+```
+
+I also downloaded a code from github that allows us to order by through a related column. Otherwise,
+it'll need quite the complex solution.
+
 
 ### Challenge Background
 We have sets of records representing football players' rushing statistics. All records have the following attributes:
@@ -42,16 +117,3 @@ In this repo is a sample data file [`rushing.json`](/rushing.json).
 
 3. Update the section `Installation and running this solution` in the README file explaining how to run your code
 
-### Submitting a solution
-1. Download this repo
-2. Complete the problem outlined in the `Requirements` section
-3. In your personal public GitHub repo, create a new public repo with this implementation
-4. Provide this link to your contact at theScore
-
-We will evaluate you on your ability to solve the problem defined in the requirements section as well as your choice of frameworks, and general coding style.
-
-### Help
-If you have any questions regarding requirements, do not hesitate to email your contact at theScore for clarification.
-
-### Installation and running this solution
-... TODO
