@@ -1,5 +1,5 @@
 """
-Rushing Stats Module
+Services for Rushing Stats
 """
 from decimal import Decimal
 from api.models.player import Player
@@ -15,7 +15,8 @@ def import_from_json(data):
 
     for row in data:
         player_name = row.get('Player')
-        # split first name and last name
+        # determine the player's first name and last name by looking for
+        # the first space
         first_name, last_name = player_name.split(' ', 1)
 
         position = row.get('Pos')

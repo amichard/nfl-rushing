@@ -1,5 +1,5 @@
 """
-Rushing Stats Module
+Viewset for Rushing stats
 """
 from rest_framework.mixins import ListModelMixin
 from rest_framework.permissions import AllowAny
@@ -12,7 +12,6 @@ from api.serializers.rushing_stats import RushingStatsSerializer
 
 class RushingStatsViewset(GenericViewSet, ListModelMixin):
     """
-    Viewset for Rushing stats
     This will build the list view and tie it with the serializer and
     permissions
     """

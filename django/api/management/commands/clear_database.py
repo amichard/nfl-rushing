@@ -1,8 +1,6 @@
 """
 Command line to clear the databases related to rushing stats
 """
-import json
-from os import path
 from django.core.management import BaseCommand
 
 from api.models.player import Player

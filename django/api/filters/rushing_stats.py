@@ -1,5 +1,11 @@
 """
-Rushing Stats Module
+Filter instructions for the model: RushingStats.
+By default, all columns can be filtered by passing a GET parameter to the
+URL with the respective column name.
+e.g. /api/rushing-stats?att_per_game=1
+     /api/rushing-stats?player__first_name=Joe
+Further reading:
+https://django-filter.readthedocs.io/en/master/ref/filters.html
 """
 from django.db.models import Q
 from django_filters import FilterSet, CharFilter
@@ -9,10 +15,17 @@ from api.models.rushing_stats import RushingStats
 
 class RushingStatsFilter(FilterSet):
     """
-    Filter instructions for the model Rushing Stats
+    Additional filters can be defined here.
     Player name - Case insensitive and contains
     Team code, team name - Case insensitive and contains
-    Rest of rushing stats - Exact
+    Future feature:
+    Allow the user to filter by range or inequality symbols
+    e.g.
+    att_per_game_min = NumberFilter(
+        field_name='att_per_game', lookup_expr='gte'
+    )
+    where it will do att_per_game__gte on the queryset if
+    att_per_game is passed as a GET paramter
     """
     player = CharFilter(method='player_lookup')
     player__position = CharFilter(lookup_expr='icontains')

@@ -13,16 +13,26 @@ class Command(BaseCommand):
     """
     This command takes in a json file and will parse and create records
     for players and their rushing stats
+    TODO: Allow users to put in a directory as an argument so that the
+    function can parse multiple json files
     """
     help = 'Loads JSON file into the players and rushing_stats table'
 
     def add_arguments(self, parser):
+        """
+        Currently only takes in a json file as a required argument
+        """
         parser.add_argument(
             'json_file', help='Filename of the JSON being imported'
         )
 
     def handle(self, *args, **options):
+        """
+        Function to parse the json file and pass it to the import
+        service
+        """
         json_file = options.get('json_file')
+
         if not path.exists(json_file):
             self.stdout.write(self.style.ERROR(
                 'Cannot find {file}. '

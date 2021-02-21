@@ -1,5 +1,7 @@
 """
-Rushing Stats Module
+Instructions on how django should treat the pagination for the app
+Further reading:
+https://www.django-rest-framework.org/api-guide/pagination/
 """
 from rest_framework.pagination import PageNumberPagination
 

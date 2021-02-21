@@ -19,6 +19,16 @@ To run the application, go to your browser and navigate to:
 http://localhost:3000/
 ```
 
+You can see how the api returns the results by going to:
+```
+http://localhost:8000/api/rushing-stats
+```
+
+You can also access the "admin" section by going to:
+```
+http://localhost:8000/admin
+```
+*Please note that you'll need to create a super user first before you can access the admin section*
 
 If you get into the container, you can run various scripts to test, refresh the database or lint.
 To get into the container, run the following in a new terminal window:
@@ -39,6 +49,11 @@ Or you can reload the data by executing:
 Or check if the code conforms to pycodestyle:
 ```
 ./pycodestyle.sh
+```
+
+Or create a superuser:
+```
+python manage.py createsuperuser
 ```
 
 You can actually load a different json file by executing:

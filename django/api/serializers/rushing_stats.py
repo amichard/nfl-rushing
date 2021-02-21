@@ -1,5 +1,6 @@
 """
-Rushing Stats Module
+Further reading:
+https://www.django-rest-framework.org/api-guide/serializers/
 """
 from rest_framework.serializers import ModelSerializer
 
