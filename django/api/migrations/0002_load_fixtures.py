@@ -9,12 +9,14 @@ from django.db import migrations
 
 def database_forward(_apps, _schema_editor):
     if not settings.TESTING:
-        os.system('./init.sh')
+        os.system('python manage.py clear_database')
+        os.system('python manage.py loaddata api/fixtures/teams.json')
+        os.system('python manage.py load_rushing_stats api/fixtures/data.json')
 
 
 def database_reverse(_apps, _schema_editor):
     if not settings.TESTING:
-        os.system('./clear.sh')
+        os.system('python manage.py clear_database')
 
 
 class Migration(migrations.Migration):

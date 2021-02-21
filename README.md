@@ -7,6 +7,7 @@ Requirements:
 * Docker https://docs.docker.com/get-docker/
 * Port 3000 and 8000 to be free
 
+*Tested in MacOS and it should work on Linux. Windows might have some trouble running some shell command, but it should be able to run the application.*
 
 
 To setup the application, execute the command in your terminal:
@@ -92,6 +93,7 @@ To handle large datasets, I used server-side paging as well. By default `react-t
 loaded right away.
 
 I renamed `rushing.json` to `data.json` and placed it on `django/api/fixtures`.
+*Original should still be in the root folder.*
 
 Django Rest Framework provides a way to see what the backend api is showing.
 You can take a look by navigating to:
