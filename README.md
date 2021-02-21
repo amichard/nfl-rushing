@@ -7,7 +7,7 @@ Requirements:
 * Docker https://docs.docker.com/get-docker/
 * Port 3000 and 8000 to be free
 
-*Tested in MacOS and it should work on Linux. Windows might have some trouble running some shell command, but it should be able to run the application.*
+*Tested in MacOS and it should work on Linux. Windows might have some trouble running some shell scripts, but it should be able to run the application.*
 
 
 To setup the application, execute the command in your terminal:
@@ -36,6 +36,7 @@ To get into the container, run the following in a new terminal window:
 ```
 docker-compose exec api bash
 ```
+*If you're using windows, Shell scripts might not work on their native command prompt. A 3rd-part application like cygwin, might be able to solve the issue. Unix for Windows might also work, but I wasn't able to test it, unfortunately*
 
 * This should let you in the container, you can then run the test command:
 ```
