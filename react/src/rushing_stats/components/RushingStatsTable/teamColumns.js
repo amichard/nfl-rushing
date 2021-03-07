@@ -13,6 +13,7 @@ const teamColumns = [{
   className: 'text-left',
   filterBy: 'team',
   Header: 'Name (Code)',
+  headerClassName: 'text-left',
   id: 'team',
   maxWidth: 300,
   sortBy: ['player__team__t_name', 'player__team__t_code'],
